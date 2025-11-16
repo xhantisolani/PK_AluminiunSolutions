@@ -438,7 +438,7 @@ export default function Home() {
               {[
                 {
                   title: 'Proven Reliability',
-                  desc: 'With over 25 years in the business, we have built a reputation for delivering on time, every time. Our clients trust us with their most important projects.',
+                  desc: 'With over 5 years in the business, we have built a reputation for delivering on time, every time. Our clients trust us with their most important projects.',
                 },
                 {
                   title: 'Quality Craftsmanship',
@@ -469,8 +469,8 @@ export default function Home() {
               <SimpleGrid columns={{ base: 2, md: 4 }} spacing={8} textAlign="center">
                 {[
                   { number: '5+', label: 'Years Experience' },
-                  { number: '500+', label: 'Projects Completed' },
-                  { number: '1000+', label: 'Satisfied Clients' },
+                  { number: '100+', label: 'Projects Completed' },
+                  { number: '150+', label: 'Satisfied Clients' },
                   { number: '100%', label: 'Quality Assured' },
                 ].map((stat, idx) => (
                   <VStack key={idx} spacing={2}>
