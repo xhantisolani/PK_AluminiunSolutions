@@ -8,6 +8,7 @@ import {
   SimpleGrid,
   Stack,
   Button,
+  Image,
 } from '@chakra-ui/react'
 import { Link as RouterLink } from 'react-router-dom'
 
@@ -20,30 +21,33 @@ export default function About() {
         py={{ base: 12, md: 16 }}
         position="relative" 
         overflow="hidden"
-        _before={{
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundImage: 'url(/assets/Pictures/cape-town-hero-section.webp)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          filter: 'blur(1px)',
-          zIndex: 0,
-        }}
-        _after={{
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          bg: 'rgba(0, 0, 0, 0.5)',
-          zIndex: 1,
-        }}
       >
+        {/* Background Image - Preloaded */}
+        <Image
+          src="/assets/Pictures/cape-town-hero-section.webp"
+          alt="About Hero Background"
+          position="absolute"
+          top={0}
+          left={0}
+          w="100%"
+          h="100%"
+          objectFit="cover"
+          zIndex={0}
+          loading="eager"
+          filter="blur(1px)"
+        />
+
+        {/* Dark Overlay */}
+        <Box
+          position="absolute"
+          top={0}
+          left={0}
+          right={0}
+          bottom={0}
+          bg="rgba(0, 0, 0, 0.5)"
+          zIndex={1}
+        />
+
         <Container maxW="5xl" px={{ base: 6, md: 8 }} position="relative" zIndex={2}>
           <VStack align="start" spacing={4}>
             <Heading as="h1" size="2xl" color={"white"}>
@@ -75,34 +79,18 @@ export default function About() {
               </Text>
             </VStack>
 
-             <Box
-                w={{ base: '100%', md: 'auto' }}
-                flex={{ base: 'none', md: 1 }}
-                h={{ base: '250px', sm: '300px', md: '400px' }}
-                borderRadius="lg"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                color="brand.400"
-                fontSize={{ base: '10px', sm: 'xs', md: 'sm' }}
-                border="2px solid"
-                borderColor="brand.200"
-                backgroundImage="url(/assets/Pictures/mr-kabab-in-the-warehouse.webp)"
-                backgroundSize="cover"
-                backgroundPosition="center"
-                position="relative"
-                overflow="hidden"
-              >
-                <Box
-                  position="absolute"
-                  top={0}
-                  left={0}
-                  right={0}
-                  bottom={0}
-                  bg="rgba(0,0,0,0.2)"
-                  zIndex={0}
-                />
-              </Box>
+            <Image
+              src="/assets/Pictures/mr-kabab-in-the-warehouse.webp"
+              alt="Team in warehouse"
+              w={{ base: '100%', md: 'auto' }}
+              flex={{ base: 'none', md: 1 }}
+              h={{ base: '250px', sm: '300px', md: '400px' }}
+              borderRadius="lg"
+              objectFit="cover"
+              border="2px solid"
+              borderColor="brand.200"
+              loading="lazy"
+            />
           </Stack>
         </Container>
       </Box>

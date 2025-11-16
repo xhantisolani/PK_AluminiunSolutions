@@ -14,6 +14,7 @@ import {
   Button,
   Icon,
   Link as ChakraLink,
+  Image,
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { FaPhoneAlt, FaArrowRight } from 'react-icons/fa'
@@ -121,35 +122,38 @@ export default function FAQ() {
   return (
     <Box bg={sectionBg}>
       {/* Hero */}
-       <Box 
+      <Box 
         color="white" 
         py={{ base: 12, md: 16 }}
         position="relative" 
         overflow="hidden"
-        _before={{
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundImage: 'url(/assets/Pictures/settings-hero-section.webp)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          filter: 'blur(1px)',
-          zIndex: 0,
-        }}
-        _after={{
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          bg: 'rgba(0, 0, 0, 0.5)',
-          zIndex: 1,
-        }}
       >
+        {/* Background Image - Preloaded */}
+        <Image
+          src="/assets/Pictures/settings-hero-section.webp"
+          alt="FAQ Hero Background"
+          position="absolute"
+          top={0}
+          left={0}
+          w="100%"
+          h="100%"
+          objectFit="cover"
+          zIndex={0}
+          loading="eager"
+          filter="blur(1px)"
+        />
+
+        {/* Dark Overlay */}
+        <Box
+          position="absolute"
+          top={0}
+          left={0}
+          right={0}
+          bottom={0}
+          bg="rgba(0, 0, 0, 0.5)"
+          zIndex={1}
+        />
+
         <Container maxW="7xl" position="relative" zIndex={2}>
           <MotionBox initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2 }}>
             <Heading size={{ base: '2xl', md: '4xl' }} mb={4} fontWeight="extrabold" color={"white"}>

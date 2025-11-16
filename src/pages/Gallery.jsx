@@ -43,30 +43,33 @@ export default function Gallery() {
         py={{ base: 12, md: 16 }}
         position="relative" 
         overflow="hidden"
-        _before={{
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundImage: 'url(/assets/Pictures/gallery-hero-section.webp)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          filter: 'blur(1px)',
-          zIndex: 0,
-        }}
-        _after={{
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          bg: 'rgba(0, 0, 0, 0.5)',
-          zIndex: 1,
-        }}
       >
+        {/* Background Image - Preloaded */}
+        <Image
+          src="/assets/Pictures/gallery-hero-section.webp"
+          alt="Gallery Hero Background"
+          position="absolute"
+          top={0}
+          left={0}
+          w="100%"
+          h="100%"
+          objectFit="cover"
+          zIndex={0}
+          loading="eager"
+          filter="blur(1px)"
+        />
+
+        {/* Dark Overlay */}
+        <Box
+          position="absolute"
+          top={0}
+          left={0}
+          right={0}
+          bottom={0}
+          bg="rgba(0, 0, 0, 0.5)"
+          zIndex={1}
+        />
+
         <Container maxW="5xl" px={{ base: 6, md: 8 }} position="relative" zIndex={2}>
           <VStack align="start" spacing={4}>
             <Heading as="h1" size="2xl" color={"white"}>

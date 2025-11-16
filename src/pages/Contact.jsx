@@ -18,11 +18,13 @@ import {
   Link,
   Spinner,
   useToast,
+  Image,
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt, FaWhatsapp } from 'react-icons/fa'
 import { WEB3FORMS } from '../utils/constants'
+
 // Company Data
 const COMPANY = {
   location: '4 Benes Street, Maitland, Cape Town, Western Cape',
@@ -31,7 +33,7 @@ const COMPANY = {
   email: 'info@pkaluminiumweldingsolutions.co.za',
   whatsappLink: 'https://wa.me/27685927370',
   mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2763.1994334795254!2d18.4798245750774!3d-33.923984421918135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc5c569519b589%3A0xf5ca173f80b32347!2s4%20Benes%20St%2C%20Maitland%2C%20Cape%20Town%2C%207405!5e1!3m2!1sen!2sza!4v1761575977342!5m2!1sen!2sza",
- }
+}
 
 export default function Contact() {
   const {
@@ -127,31 +129,34 @@ export default function Contact() {
         py={{ base: 12, md: 16 }}
         position="relative" 
         overflow="hidden"
-        _before={{
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundImage: 'url(/assets/Pictures/contact.webp)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          filter: 'blur(1px)',
-          zIndex: 0,
-        }}
-        _after={{
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          bg: 'rgba(0, 0, 0, 0.5)',
-          zIndex: 1,
-        }}
       >
-       <Container maxW="5xl" px={{ base: 6, md: 8 }} position="relative" zIndex={2}>
+        {/* Background Image - Preloaded */}
+        <Image
+          src="/assets/Pictures/contact.webp"
+          alt="Contact Hero Background"
+          position="absolute"
+          top={0}
+          left={0}
+          w="100%"
+          h="100%"
+          objectFit="cover"
+          zIndex={0}
+          loading="eager"
+          filter="blur(1px)"
+        />
+
+        {/* Dark Overlay */}
+        <Box
+          position="absolute"
+          top={0}
+          left={0}
+          right={0}
+          bottom={0}
+          bg="rgba(0, 0, 0, 0.5)"
+          zIndex={1}
+        />
+
+        <Container maxW="5xl" px={{ base: 6, md: 8 }} position="relative" zIndex={2}>
           <VStack align="start" spacing={4}>
             <Heading as="h1" size="2xl" color={"white"}>
               Get a Quote for Your Project

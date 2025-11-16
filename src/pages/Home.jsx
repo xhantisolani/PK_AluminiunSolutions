@@ -23,30 +23,32 @@ export default function Home() {
         py={{ base: 12, sm: 16, md: 32 }} 
         position="relative" 
         overflow="hidden"
-        _before={{
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundImage: 'url(/assets/Pictures/landing-page-2.webp)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          filter: 'blur(1px)',
-          zIndex: 0,
-        }}
-        _after={{
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          bg: 'rgba(0, 0, 0, 0.4)',
-          zIndex: 1,
-        }}
       >
+        {/* Background Image - Preloaded */}
+        <Image
+          src="/assets/Pictures/landing-page-2.webp"
+          alt="Hero Background"
+          position="absolute"
+          top={0}
+          left={0}
+          w="100%"
+          h="100%"
+          objectFit="cover"
+          zIndex={0}
+          loading="eager"
+        />
+        
+        {/* Dark Overlay */}
+        <Box
+          position="absolute"
+          top={0}
+          left={0}
+          right={0}
+          bottom={0}
+          bg="rgba(0, 0, 0, 0.4)"
+          zIndex={1}
+        />
+
         <Container maxW="6xl" px={{ base: 4, sm: 5, md: 8 }} position="relative" zIndex={2}>
           <VStack align="start" spacing={{ base: 5, md: 8 }} maxW="100%">
             <Heading as="h1" size={{ base: 'lg', sm: 'xl', md: '3xl' }} lineHeight="1.2" fontWeight="900" color="white">
