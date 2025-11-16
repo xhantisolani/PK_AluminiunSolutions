@@ -30,7 +30,7 @@ export default function Home() {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage: 'url(/assets/Pictures/landing-page-2.jpg)',
+          backgroundImage: 'url(/assets/Pictures/landing-page-2.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           filter: 'blur(1px)',
@@ -142,7 +142,7 @@ export default function Home() {
                 fontSize={{ base: '10px', sm: 'xs', md: 'sm' }}
                 border="2px solid"
                 borderColor="brand.200"
-                backgroundImage="url(/assets/Pictures/warehouse-welding.jpg)"
+                backgroundImage="url(/assets/Pictures/warehouse-welding.webp)"
                 backgroundSize="cover"
                 backgroundPosition="center"
                 position="relative"

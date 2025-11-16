@@ -134,7 +134,7 @@ export default function Contact() {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage: 'url(/assets/Pictures/contact.jpg)',
+          backgroundImage: 'url(/assets/Pictures/contact.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           filter: 'blur(1px)',

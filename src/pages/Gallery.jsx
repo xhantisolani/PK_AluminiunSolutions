@@ -50,7 +50,7 @@ export default function Gallery() {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage: 'url(/assets/Pictures/gallery-hero-section.jpg)',
+          backgroundImage: 'url(/assets/Pictures/gallery-hero-section.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           filter: 'blur(1px)',

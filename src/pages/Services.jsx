@@ -29,7 +29,7 @@ export default function Services() {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage: 'url(/assets/Pictures/services-section-hero.jpg)',
+          backgroundImage: 'url(/assets/Pictures/services-section-hero.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           filter: 'blur(1px)',

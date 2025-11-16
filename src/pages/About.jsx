@@ -27,7 +27,7 @@ export default function About() {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage: 'url(/assets/Pictures/cape-town-hero-section.jpg)',
+          backgroundImage: 'url(/assets/Pictures/cape-town-hero-section.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           filter: 'blur(1px)',
@@ -87,7 +87,7 @@ export default function About() {
                 fontSize={{ base: '10px', sm: 'xs', md: 'sm' }}
                 border="2px solid"
                 borderColor="brand.200"
-                backgroundImage="url(/assets/Pictures/mr-kabab-in-the-warehouse.jpg)"
+                backgroundImage="url(/assets/Pictures/mr-kabab-in-the-warehouse.webp)"
                 backgroundSize="cover"
                 backgroundPosition="center"
                 position="relative"
