@@ -8,7 +8,7 @@ export const services = [
 From small custom pieces to large-scale projects, we handle all your welding and fabrication needs. Our team uses state-of-the-art equipment combined with expert craftsmanship to deliver precision results every time.
 
 Perfect for: One-off custom projects, prototypes, replacements, or any metal fabrication job you can imagine.`,
-    image: '/assets/Services/Custom-Welding-and-Fabrication.jpg',
+    image: '/assets/Services/Custom-Welding-and-Fabrication.webp',
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ Options include:
 • Decorative and functional designs
 
 Every gate is built to your specifications, finished to your standards, and installed professionally.`,
-    image: '/assets/Services/Gates-and-Railings.jpg',
+    image: '/assets/Services/Gates-and-Railings.webp',
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ What we build:
 • Durable finishes that withstand the elements
 
 From concept to installation, we handle everything. All structures are engineered for durability and built to last.`,
-    image: '/assets/Services/image-13.jpg',
+    image: '/assets/Services/image-13.webp',
   },
   {
     id: 4,
@@ -56,7 +56,7 @@ Our capabilities:
 • Commercial and industrial solutions
 
 No project is too big. We have the expertise, equipment, and experience to handle serious metal work.`,
-    image: '/assets/Services/Custom-Trailers.jpg',
+    image: '/assets/Services/Custom-Trailers.webp',
   },
   {
     id: 5,
@@ -72,7 +72,7 @@ What we repair:
 • Urgent repair turnarounds
 
 We understand downtime costs. We work quickly without compromising on quality to get you back in business.`,
-    image: '/assets/Services/welding-fix.jpg',
+    image: '/assets/Services/welding-fix.webp',
   },
   {
     id: 6,
@@ -88,7 +88,7 @@ We create:
 • Commercial and residential solutions
 
 Every door and frame is built to specification, finished professionally, and installed with care.`,
-    image: '/assets/Services/Custom-Welding-and-Fabrication.jpg',
+    image: '/assets/Services/Custom-Welding-and-Fabrication.webp',
   },
   {
     id: 7,
@@ -104,7 +104,7 @@ Our expertise includes:
 • Support structures for any application
 
 Engineered for safety and built with precision. All work meets industry standards and codes.`,
-    image: '/assets/Services/structural-steel-works.jpg',
+    image: '/assets/Services/structural-steel-works.webp',
   },
   {
     id: 8,
@@ -120,6 +120,6 @@ We build:
 • Architectural metalwork
 
 Functionality meets aesthetics. Every piece is built to last and designed to impress.`,
-    image: '/assets/Services/real-metal-art.jpg',
+    image: '/assets/Services/real-metal-art.webp',
   },
 ]
