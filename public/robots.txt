@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /services
+Allow: /gallery
+Allow: /contact
+Allow: /faq
+Disallow: /admin
+Disallow: /dashboard
+Disallow: /private
+
+# Specify crawl delay and request rate
+Crawl-delay: 1
+Request-rate: 1/10
+
+# Sitemap reference
+Sitemap: https://pk-aluminium-welding-solutions.vercel.app/sitemap.xml

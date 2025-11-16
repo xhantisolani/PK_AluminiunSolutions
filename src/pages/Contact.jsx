@@ -344,27 +344,27 @@ export default function Contact() {
                 
                 <HStack mb={4}>
                   <Icon as={FaPhoneAlt} color={accentColor} w={5} h={5} />
-                  <Link href={`tel:${COMPANY.phoneRaw}`} fontWeight="semibold">
+                  <Link href={`tel:${COMPANY.phoneRaw}`} fontWeight="semibold" _hover={{ color: accentColor }}>
                     {COMPANY.phone}
                   </Link>
                 </HStack>
 
                 <HStack mb={4}>
                   <Icon as={FaWhatsapp} color="whatsapp.500" w={5} h={5} />
-                  <Link href={COMPANY.whatsappLink} isExternal fontWeight="semibold">
+                  <Link href={COMPANY.whatsappLink} isExternal fontWeight="semibold" _hover={{ color: accentColor }}>
                     WhatsApp Us
                   </Link>
                 </HStack>
 
                 <HStack mb={4}>
                   <Icon as={FaEnvelope} color={accentColor} w={5} h={5} />
-                  <Link href={`mailto:${COMPANY.email}`}>
+                  <Link href={`mailto:${COMPANY.email}`} _hover={{ color: accentColor }}>
                     {COMPANY.email}
                   </Link>
                 </HStack>
 
                 <HStack align="flex-start">
-                  <Icon as={FaMapMarkerAlt} color={accentColor} w={5} h={5} mt={1} />
+                  <Icon as={FaMapMarkerAlt} color={accentColor} w={5} h={5} mt={1} _hover={{ color: accentColor }}/>
                   <Text>
                     Our Workshop: <strong>4 Benes Street, Maitland, Cape Town</strong>
                   </Text>
@@ -438,7 +438,7 @@ export default function Contact() {
                 <Text color="brand.600" fontSize="sm" mb={3}>
                   Call us immediately for urgent requests.
                 </Text>
-                 <Link href={`tel:${COMPANY.phoneRaw}`} fontWeight="semibold">
+                 <Link href={`tel:${COMPANY.phoneRaw}` }_hover={{ color: accentColor }} fontWeight="semibold">
                         {COMPANY.phone}
                  </Link>
               </Box>
