@@ -47,59 +47,74 @@ export default function Contact() {
   const accentColor = 'accent.500'
 
   const onSubmit = async (data) => {
+    console.log('✓ Form submitted with data:', data)
+    console.log('✓ Form validation passed - no errors')
     setIsSubmitting(true)
     try {
+      const accessKey = import.meta.env.VITE_WEB3FORM_KEY
+      console.log('✓ Access key check:', accessKey ? 'FOUND' : 'NOT FOUND')
+
+      if (!accessKey || accessKey === 'YOUR_WEB3FORM_ACCESS_KEY') {
+        throw new Error('Web3Form access key is not configured. Please contact support.')
+      }
+
       const formData = new FormData()
       
-      // Add form fields
+      // Add form fields to FormData
       formData.append('name', data.name)
       formData.append('email', data.email)
       formData.append('phone', data.phone)
       formData.append('service', data.service)
       formData.append('message', data.message)
-      
-      // Web3Form access key - Replace with your actual key
-      formData.append('access_key', import.meta.env.VITE_WEB3FORM_KEY || 'YOUR_WEB3FORM_ACCESS_KEY')
+      formData.append('access_key', accessKey)
 
+      console.log('✓ FormData prepared, sending to Web3Forms...')
+      
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         body: formData,
       })
 
+      console.log('✓ Response received, status:', response.status)
+
+      if (!response.ok) {
+        throw new Error(`Server error! Status: ${response.status}`)
+      }
+
       const result = await response.json()
+      console.log('✓ Web3Form API Response:', result)
 
       if (result.success) {
+        console.log('✓✓✓ Form submitted successfully!')
+        
+        // Clear form fields
+        reset()
+        
+        // Show success message
         toast({
-          title: 'Success!',
-          description: 'Thank you for your inquiry. We will contact you shortly.',
+          title: '✓ Message Sent!',
+          description: 'Thank you for reaching out! We will contact you within 24 hours.',
           status: 'success',
-          duration: 5,
+          duration: 6,
           isClosable: true,
           position: 'top-right',
         })
-        reset() // Clear all form fields
-        setIsSubmitting(false)
       } else {
-        toast({
-          title: 'Error',
-          description: result.message || 'Failed to submit form. Please try again.',
-          status: 'error',
-          duration: 5,
-          isClosable: true,
-          position: 'top-right',
-        })
-        setIsSubmitting(false)
+        throw new Error(result.message || 'Form submission was not successful. Please try again.')
       }
     } catch (error) {
-      console.error('Form submission error:', error)
+      console.error('✗ Form submission error:', error)
+      
+      // Show error message
       toast({
-        title: 'Error',
-        description: 'An error occurred while submitting the form. Please try again.',
+        title: '✗ Failed to Send',
+        description: error.message || 'There was a problem sending your message. Please try again or contact us directly.',
         status: 'error',
-        duration: 5,
+        duration: 6,
         isClosable: true,
         position: 'top-right',
       })
+    } finally {
       setIsSubmitting(false)
     }
   }
@@ -297,20 +312,18 @@ export default function Contact() {
 
                 <Button
                   type="submit"
-                  bg="brand.800"
+                  bg={isSubmitting ? 'gray.400' : 'brand.800'}
                   color="white"
-                  _hover={{ bg: 'brand.700', transform: 'translateY(-2px)' }}
+                  _hover={isSubmitting ? {} : { bg: 'brand.700', transform: 'translateY(-2px)' }}
                   _active={{ transform: 'translateY(0)' }}
                   size="lg"
                   w="100%"
-                  isLoading={isSubmitting}
-                  loadingText="Sending..."
                   isDisabled={isSubmitting}
-                  onClick={handleSubmit(onSubmit)}
                   transition="all 0.2s"
-                  boxShadow={isSubmitting ? '0 0 0 3px rgba(0, 0, 0, 0.1)' : 'md'}
+                  cursor={isSubmitting ? 'not-allowed' : 'pointer'}
+                  boxShadow="md"
                 >
-                  {!isSubmitting && 'Send'}
+                  {isSubmitting ? '⏳ Sending your message...' : '✓ Send Message'}
                 </Button>
               </VStack>
 
