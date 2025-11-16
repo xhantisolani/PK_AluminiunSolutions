@@ -14,4 +14,4 @@ Crawl-delay: 1
 Request-rate: 1/10
 
 # Sitemap reference
-Sitemap: https://pk-aluminium-welding-solutions.vercel.app/sitemap.xml
+Sitemap: https://www.pkaluminiumweldingsolutions.co.za/
