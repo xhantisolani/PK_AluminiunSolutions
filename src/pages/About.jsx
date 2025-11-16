@@ -195,9 +195,9 @@ export default function About() {
         <Container maxW="6xl" px={{ base: 6, md: 8 }}>
           <SimpleGrid columns={{ base: 2, md: 4 }} spacing={8} textAlign="center">
             {[
-              { number: '25+', label: 'Years in Business' },
-              { number: '500+', label: 'Projects Completed' },
-              { number: '1000+', label: 'Satisfied Clients' },
+              { number: '5+', label: 'Years Experience' },
+              { number: '100+', label: 'Projects Completed' },
+              { number: '150+', label: 'Satisfied Clients' },
               { number: '100%', label: 'Quality Assured' },
             ].map((stat, idx) => (
               <VStack key={idx} spacing={2}>

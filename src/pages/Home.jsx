@@ -468,7 +468,7 @@ export default function Home() {
             <Box bg="brand.800" color="white" p={12} borderRadius="lg" mt={8}>
               <SimpleGrid columns={{ base: 2, md: 4 }} spacing={8} textAlign="center">
                 {[
-                  { number: '25+', label: 'Years Experience' },
+                  { number: '5+', label: 'Years Experience' },
                   { number: '500+', label: 'Projects Completed' },
                   { number: '1000+', label: 'Satisfied Clients' },
                   { number: '100%', label: 'Quality Assured' },
