@@ -22,7 +22,7 @@ import {
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt, FaWhatsapp } from 'react-icons/fa'
-
+import { WEB3FORMS } from '../utils/constants'
 // Company Data
 const COMPANY = {
   location: '4 Benes Street, Maitland, Cape Town, Western Cape',
@@ -31,7 +31,7 @@ const COMPANY = {
   email: 'info@pkaluminiumweldingsolutions.co.za',
   whatsappLink: 'https://wa.me/27685927370',
   mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2763.1994334795254!2d18.4798245750774!3d-33.923984421918135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc5c569519b589%3A0xf5ca173f80b32347!2s4%20Benes%20St%2C%20Maitland%2C%20Cape%20Town%2C%207405!5e1!3m2!1sen!2sza!4v1761575977342!5m2!1sen!2sza",
-}
+ }
 
 export default function Contact() {
   const {
@@ -51,10 +51,10 @@ export default function Contact() {
     console.log('✓ Form validation passed - no errors')
     setIsSubmitting(true)
     try {
-      const accessKey = import.meta.env.VITE_WEB3FORM_KEY
+      const accessKey = WEB3FORMS.ACCESS_KEY
       console.log('✓ Access key check:', accessKey ? 'FOUND' : 'NOT FOUND')
 
-      if (!accessKey || accessKey === 'YOUR_WEB3FORM_ACCESS_KEY') {
+      if (!accessKey) {
         throw new Error('Web3Form access key is not configured. Please contact support.')
       }
 
@@ -322,6 +322,10 @@ export default function Contact() {
                   transition="all 0.2s"
                   cursor={isSubmitting ? 'not-allowed' : 'pointer'}
                   boxShadow="md"
+                  onClick={() => {
+                    console.log('BUTTON CLICKED - Form will submit now')
+                    console.log('Current form state:', { isSubmitting })
+                  }}
                 >
                   {isSubmitting ? '⏳ Sending your message...' : '✓ Send Message'}
                 </Button>
