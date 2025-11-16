@@ -36,6 +36,7 @@ export default function Home() {
           objectFit="cover"
           zIndex={0}
           loading="eager"
+          filter="blur(1px)"
         />
         
         {/* Dark Overlay */}
@@ -131,25 +132,25 @@ export default function Home() {
                 </VStack>
               </VStack>
 
-              {/* Placeholder for workshop image */}
+              {/* Optimized Workshop Image */}
               <Box
                 w={{ base: '100%', md: 'auto' }}
                 flex={{ base: 'none', md: 1 }}
                 h={{ base: '250px', sm: '300px', md: '400px' }}
                 borderRadius="lg"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                color="brand.400"
-                fontSize={{ base: '10px', sm: 'xs', md: 'sm' }}
-                border="2px solid"
-                borderColor="brand.200"
-                backgroundImage="url(/assets/Pictures/warehouse-welding.webp)"
-                backgroundSize="cover"
-                backgroundPosition="center"
                 position="relative"
                 overflow="hidden"
+                border="2px solid"
+                borderColor="brand.200"
               >
+                <Image
+                  src="/assets/Pictures/warehouse-welding.webp"
+                  alt="Workshop warehouse"
+                  w="100%"
+                  h="100%"
+                  objectFit="cover"
+                  loading="lazy"
+                />
                 <Box
                   position="absolute"
                   top={0}
@@ -157,7 +158,8 @@ export default function Home() {
                   right={0}
                   bottom={0}
                   bg="rgba(0,0,0,0.2)"
-                  zIndex={0}
+                  zIndex={1}
+                  pointerEvents="none"
                 />
               </Box>
             </Stack>
